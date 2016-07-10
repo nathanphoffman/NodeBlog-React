@@ -26,6 +26,8 @@
     "webpack": "^1.13.1"
   },
   "dependencies": {
+    "moment": "^2.14.1",
+    "react-date-picker": "^5.3.21",
     "whatwg-fetch": "^1.0.0"
   }
 }

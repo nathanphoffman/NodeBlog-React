@@ -6,6 +6,7 @@ var TagBar = require('./Components/TagBar.jsx');
 
 var Preview = require('./Pages/Preview.jsx');
 var Post = require('./Pages/Post.jsx');
+var Modify = require('./Pages/Modify.jsx');
 
 module.exports = class extends React.Component {
   render() {
@@ -13,18 +14,21 @@ module.exports = class extends React.Component {
     let route;
     if (this.state && this.state.route) {
       if (this.state.route == 'preview') route = (
-        <Preview 
+        <Preview
           page={this.state.page ? this.state.page : 1}
           tag={this.state.tag ? this.state.tag : null}
         />
         );
+      else if(this.state.route == 'modify') route
+        = (<Modify id={this.state.id} create={this.state.create}/>);
       // id is always required and should hard fail if we dont have it
-      else if (this.state.route == 'post') route = (<Post id={this.state.id}/>) 
+      else if (this.state.route == 'post') route = (<Post id={this.state.id}/>)
       else if (this.state.route == 'error') route = (<div>{this.state.error.message}</div>)
     }
     else route = null; // we do nothing if the route is still rendering
 
-    return (<div><Navbar/><Header/><TagBar/>
+    return (<div><Navbar/><Header/>
+      {this.state && this.state.route && this.state.route != 'modify' && (<TagBar/>)}
       <div className="container">
         <div className="row">
           <div className="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0">

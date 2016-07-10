@@ -8,8 +8,8 @@ module.exports = class extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 text-center">
-                        <LgIcon address="#tag/web-frontend" icon="chrome"/>
-                        <LgIcon address="#tag/web-server" icon="server"/>
+                        <LgIcon address="#tag/web" icon="chrome"/>
+                        <LgIcon address="#tag/application" icon="server"/>
                         <LgIcon address="#tag/space" icon="space-shuttle"/>
                         <LgIcon address="#tag/photos" icon="camera"/>
                         <LgIcon address="#tag/painting" icon="paint-brush"/>

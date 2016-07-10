@@ -2,7 +2,7 @@
 
 var React = require('react');
 var SmIcon = require('./../General/SmIcon.jsx');
-var PreviewItem = require('./PreviewItem.jsx');
+var PreviewItem = require('./Preview/PreviewItem.jsx');
 var data = require('./../../js/data.js');
 
 module.exports = class extends React.Component {
@@ -18,6 +18,7 @@ module.exports = class extends React.Component {
         var posts = [];
         if (this.state && this.state.posts) {
             this.state.posts.forEach(function (post) {
+                // displays each blog post preview:
                 posts.push(<PreviewItem author="Nathan Hoffman"
                     title={post.title}
                     subtitle={post.subtitle}
@@ -41,9 +42,3 @@ module.exports = class extends React.Component {
         );
     }
 };
-
-
-
-
-
-

@@ -1,5 +1,5 @@
 var React = require('react');
-var SmIcon = require('./../General/SmIcon.jsx');
+var SmIcon = require('./../../General/SmIcon.jsx');
 
 module.exports = class extends React.Component {
 
@@ -10,9 +10,9 @@ module.exports = class extends React.Component {
                     <h2 className="post-title text-center">
                      {this.props.title}
                     </h2>
-                    
+
                     {this.props.subtitle}
-                    
+
                 </a>
                 <p className="post-meta text-right">Posted by {this.props.author} on {this.props.date}</p>
             </div>

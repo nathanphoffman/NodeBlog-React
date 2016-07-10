@@ -6,15 +6,14 @@ var data = require('./../../js/data.js');
 module.exports = class extends React.Component {
 
     componentDidMount() {
-        data.getPost(this.props.id,function (post) {
+        data.getPost(this.props.id, function (post) {
             this.setState(post);
         }.bind(this));
     }
 
     render() {
 
-        if(this.state && this.state.title)
-        {
+        if (this.state && this.state.title) {
             return (
                 <div>
                     <h2 className="text-center">{this.state.title}</h2>

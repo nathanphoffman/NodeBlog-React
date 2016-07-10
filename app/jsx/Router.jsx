@@ -12,6 +12,7 @@ module.exports = function(){
   ));
 
   routie({
+    // preview blog posts is the default state
     '': function() {
       state.setState({ route: 'preview', page: 1, tag: null })},
 
@@ -22,11 +23,21 @@ module.exports = function(){
       state.setState({ route: 'preview', page: 1, tag: tag })},
 
     'post/:id': function(id) {
-      state.setState({ route: 'post', id: id })},
+      state.setState({ route: 'post', id: id });},
 
+    'modify/:id': function(id){
+      state.setState({ route: 'modify', create: false, id: id });
+    },
+
+    'create': function(id){
+      state.setState({ route: 'modify', create: true, id: null });
+    },
+
+    // this must be at the end to catch any non matching routes
     '*': function(){
-      state.setState({ route: 'error', message: "Route not found" })
-    }
+      state.setState({ route: 'error', message: "Route not found" });
+    },
+
   });
 
 
